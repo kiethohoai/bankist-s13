@@ -1,0 +1,14 @@
+{
+  "name": "bankist-s13",
+  "version": "1.0.0",
+  "description": "Advanced DOM and Events",
+  "main": "script.js",
+  "scripts": {
+    "sv": "live-server"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "live-server": "^1.2.2"
+  }
+}
