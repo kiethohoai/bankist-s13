@@ -665,7 +665,7 @@ h4 {
 .cookie-message {
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: center;
   width: 100%;
   background-color: white;
   color: #bbb;

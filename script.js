@@ -48,6 +48,7 @@ console.log(`🚀  header =>`, header);
 console.log(`🚀  sections =>`, sections);
 
 
+
 // Create, Insert Elements
 const message = document.createElement('div');
 message.classList.add('cookies-message');
@@ -71,7 +72,34 @@ header.append(message);
 document.querySelector('.btn--close-cookie').addEventListener('click', () => {
   message.parentElement.removeChild(message);
 });
- */
+
+// Styles, Attributes and Classes
+message.style.backgroundColor = '#37383d';
+message.style.width = '120%';
+message.style.color = '#fff';
+
+// document.documentElement.style.setProperty('--color-primary', 'orangered');
+
+const logo = document.querySelector('.nav__logo');
+console.log(`🚀  logo.alt =>`, logo.alt);
+console.log(`🚀  logo.src =>`, logo.src);
+console.log(`🚀  logo.className =>`, logo.className);
+
+logo.setAttribute('designer', 'John');
+console.log(`🚀  logo.getAttribute =>`, logo.getAttribute('designer'));
 
 
+const link = document.querySelector('.nav__link--btn');
+console.log(link.href);
+console.log(link.getAttribute('href'));
 
+// data attributes
+const logo = document.querySelector('.nav__logo');
+console.log(logo.dataset.versionNumber);
+
+// classList
+logo.classList.add('jonas');
+logo.classList.remove('jonas');
+logo.classList.toggle('jonas');
+logo.classList.contains('jonas'); 
+*/
