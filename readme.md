@@ -4,3 +4,4 @@ Advanced DOM and Events
 005 Selecting, Creating, and Deleting Elements
 006 Styles, Attributes and Classes
 007 Implementing Smooth Scrolling
+008 Types of Events and Event Handlers

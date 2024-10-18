@@ -39,6 +39,8 @@ document.addEventListener('keydown', function (e) {
 //OPTIMIZE ALL SECTION
 //OPTIMIZE =============
 
+// 007 Implementing Smooth Scrolling
+/* 
 const btnScrollTo = document.querySelector('.btn--scroll-to');
 const section1 = document.querySelector('#section--1');
 const section2 = document.querySelector('#section--2');
@@ -55,3 +57,18 @@ btnScrollTo.addEventListener('click', e => {
   // #2
   section1.scrollIntoView({ behavior: 'smooth' });
 });
+ */
+
+// 008 Types of Events and Event Handlers
+
+const h1 = document.querySelector('h1');
+
+const alertH1 = e => {
+  console.log('addEventListener: Great! You are reading the heading');
+};
+
+h1.addEventListener('mouseenter', alertH1);
+
+setTimeout(() => {
+  h1.removeEventListener('mouseenter', alertH1);
+}, 3000);
