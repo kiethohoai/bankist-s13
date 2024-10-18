@@ -35,71 +35,23 @@ document.addEventListener('keydown', function (e) {
   }
 });
 
-/* //OPTIMIZE ALL SECTION */
-// 005 Selecting, Creating, and Deleting Elements
-/* 
-console.log(document.documentElement);
-console.log(document.body);
-console.log(document.head);
+//OPTIMIZE =============
+//OPTIMIZE ALL SECTION
+//OPTIMIZE =============
 
-const header = document.querySelector('.header');
-const sections = document.querySelectorAll('.section');
-console.log(`🚀  header =>`, header);
-console.log(`🚀  sections =>`, sections);
+const btnScrollTo = document.querySelector('.btn--scroll-to');
+const section1 = document.querySelector('#section--1');
+const section2 = document.querySelector('#section--2');
 
+btnScrollTo.addEventListener('click', e => {
+  const s1coord = section1.getBoundingClientRect();
 
+  // #1
+  // window.scrollTo({
+  //   left: s1coord.left + window.pageXOffset,
+  //   top: s1coord.top + window.pageYOffset,
+  //   behavior: 'smooth',
 
-// Create, Insert Elements
-const message = document.createElement('div');
-message.classList.add('cookies-message');
-message.textContent = 'Hello I am John Ho';
-message.innerHTML = `
-  We use cookies for improved functionality and analytics.
-  <button class="btn btn--close-cookie">Got it!</button>
-`;
-
-const header = document.querySelector('.header');
-header.append(message);
-// header.prepend(message.cloneNode(true));
-// header.before(message);
-// header.after(message);
-
-// Delete Elements
-// document.querySelector('.btn--close-cookie').addEventListener('click', () => {
-//   message.remove();
-// });
-
-document.querySelector('.btn--close-cookie').addEventListener('click', () => {
-  message.parentElement.removeChild(message);
+  // #2
+  section1.scrollIntoView({ behavior: 'smooth' });
 });
-
-// Styles, Attributes and Classes
-message.style.backgroundColor = '#37383d';
-message.style.width = '120%';
-message.style.color = '#fff';
-
-// document.documentElement.style.setProperty('--color-primary', 'orangered');
-
-const logo = document.querySelector('.nav__logo');
-console.log(`🚀  logo.alt =>`, logo.alt);
-console.log(`🚀  logo.src =>`, logo.src);
-console.log(`🚀  logo.className =>`, logo.className);
-
-logo.setAttribute('designer', 'John');
-console.log(`🚀  logo.getAttribute =>`, logo.getAttribute('designer'));
-
-
-const link = document.querySelector('.nav__link--btn');
-console.log(link.href);
-console.log(link.getAttribute('href'));
-
-// data attributes
-const logo = document.querySelector('.nav__logo');
-console.log(logo.dataset.versionNumber);
-
-// classList
-logo.classList.add('jonas');
-logo.classList.remove('jonas');
-logo.classList.toggle('jonas');
-logo.classList.contains('jonas'); 
-*/

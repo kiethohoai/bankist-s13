@@ -3,3 +3,4 @@ Advanced DOM and Events
 004 How the DOM Really Works
 005 Selecting, Creating, and Deleting Elements
 006 Styles, Attributes and Classes
+007 Implementing Smooth Scrolling
