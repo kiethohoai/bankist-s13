@@ -39,36 +39,25 @@ document.addEventListener('keydown', function (e) {
 //OPTIMIZE ALL SECTION
 //OPTIMIZE =============
 
-// 007 Implementing Smooth Scrolling
-/* 
-const btnScrollTo = document.querySelector('.btn--scroll-to');
-const section1 = document.querySelector('#section--1');
-const section2 = document.querySelector('#section--2');
-
-btnScrollTo.addEventListener('click', e => {
-  const s1coord = section1.getBoundingClientRect();
-
-  // #1
-  // window.scrollTo({
-  //   left: s1coord.left + window.pageXOffset,
-  //   top: s1coord.top + window.pageYOffset,
-  //   behavior: 'smooth',
-
-  // #2
-  section1.scrollIntoView({ behavior: 'smooth' });
-});
- */
-
-// 008 Types of Events and Event Handlers
-
-const h1 = document.querySelector('h1');
-
-const alertH1 = e => {
-  console.log('addEventListener: Great! You are reading the heading');
+// rgb 255 255 255
+const randomInt = (min, max) => {
+  return Math.floor(Math.random() * (max - min + 1) + min);
 };
 
-h1.addEventListener('mouseenter', alertH1);
+const randomColor = () => {
+  return `rgb(${randomInt(0, 255)}, ${randomInt(0, 255)}, ${randomInt(
+    0,
+    255
+  )})`;
+};
 
-setTimeout(() => {
-  h1.removeEventListener('mouseenter', alertH1);
-}, 3000);
+document.querySelector('.nav__link').addEventListener('click', function (e) {
+  this.style.backgroundColor = randomColor();
+  e.stopPropagation();
+});
+document.querySelector('.nav__links').addEventListener('click', function (e) {
+  this.style.backgroundColor = randomColor();
+});
+document.querySelector('.nav').addEventListener('click', function (e) {
+  this.style.backgroundColor = randomColor();
+});
