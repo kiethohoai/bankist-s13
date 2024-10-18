@@ -5,3 +5,4 @@ Advanced DOM and Events
 006 Styles, Attributes and Classes
 007 Implementing Smooth Scrolling
 008 Types of Events and Event Handlers
+009 Event Propagation Bubbling and Capturing
