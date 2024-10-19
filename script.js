@@ -16,6 +16,8 @@ const tabsContainer = document.querySelector('.operations__tab-container');
 const tabs = document.querySelectorAll('.operations__tab');
 const tabsContent = document.querySelectorAll('.operations__content');
 
+const nav = document.querySelector('.nav');
+
 const openModal = function (e) {
   e.preventDefault();
   modal.classList.remove('hidden');
@@ -81,6 +83,7 @@ tabsContainer.addEventListener('click', e => {
 });
 
 // todo Menu fade animation
+
 const handleHover = function (e) {
   console.log(this, e.currentTarget);
 
@@ -99,9 +102,7 @@ const handleHover = function (e) {
   }
 };
 
-const nav = document.querySelector('.nav');
-// nav.addEventListener('mouseover', e => handleHover(e, 0.5));
-// nav.addEventListener('mouseout', e => handleHover(e, 1));
-
 nav.addEventListener('mouseover', handleHover.bind(0.5));
 nav.addEventListener('mouseout', handleHover.bind(1));
+// nav.addEventListener('mouseover', e => handleHover(e, 0.5));
+// nav.addEventListener('mouseout', e => handleHover(e, 1));
