@@ -78,3 +78,29 @@ document.querySelector('.nav__links').addEventListener('click', function (e) {
   }
 });
  */
+
+// const h1 = document.querySelector('h1');
+// console.log(`🚀  h1 =>`, h1.querySelector('.highlight'));
+// console.log(`🚀  h1.childNodes =>`, h1.childNodes);
+// console.log(`🚀  h1.children =>`, h1.children);
+
+// Select first child and last child
+// h1.firstElementChild.style.color = 'red';
+// h1.lastElementChild.style.color = 'blue';
+// console.log('🚀  h1.parentElement =>', h1.parentElement);
+
+// h1.closest('.header').style.backgroundColor = 'red';
+// h1.closest('.header').style.backgroundColor = '#ccc';
+// h1.closest('h1').style.background = 'red';
+
+// Going Sibling
+// console.log(h1.previousElementSibling);
+// console.log(h1.nextElementSibling);
+
+// console.log(h1.previousSibling);
+// console.log(h1.nextSibling);
+
+// console.log(h1.parentElement.children);
+// [...h1.parentElement.children].forEach(el => {
+//   if (el !== h1) el.style.backgroundColor = 'red';
+// });
