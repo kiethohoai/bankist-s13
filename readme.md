@@ -9,3 +9,4 @@ Advanced DOM and Events
 010 Event Propagation in Practice
 011 Event Delegation Implementing Page Navigation
 012 DOM Traversing
+013 Building a Tabbed Component
