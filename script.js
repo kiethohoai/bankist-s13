@@ -185,7 +185,7 @@ allSections.forEach(section => {
   section.classList.add('section--hidden');
   sectionObserver.observe(section);
 }); */
-
+/* 
 const fadeInSection = function (entries, observer) {
   const [entry] = entries;
   if (!entry.isIntersecting) return;
@@ -201,11 +201,10 @@ const sectionObserver = new IntersectionObserver(fadeInSection, {
 allSections.forEach(section => {
   section.classList.add('section--hidden');
   sectionObserver.observe(section);
-});
+}); */
 
 //todo Lazy Loading Images
 const imgTargets = document.querySelectorAll('img[data-src]');
-
 const loadImg = function (entries, observer) {
   const [entry] = entries;
 
@@ -228,3 +227,89 @@ const imgObserver = new IntersectionObserver(loadImg, {
 imgTargets.forEach(img => {
   imgObserver.observe(img);
 });
+
+//todo Sliders
+/* 
+const slides = document.querySelectorAll('.slide');
+const btnLeft = document.querySelector('.slider__btn--left');
+const btnRight = document.querySelector('.slider__btn--right');
+
+let curSlide = 0;
+console.log(`🚀  curSlide =>`, curSlide);
+const maxSlide = slides.length;
+
+const gotoSlide = function (slide) {
+  slides.forEach(
+    (s, i) => (s.style.transform = `translateX(${(i - slide) * 100}%)`)
+  );
+};
+
+gotoSlide(0);
+
+// Next Slide
+const nextSlide = () => {
+  if (curSlide === maxSlide - 1) {
+    curSlide = 0;
+  } else {
+    curSlide++;
+  }
+
+  gotoSlide(curSlide);
+};
+
+// Prev Slide
+const prevSlide = () => {
+  if (curSlide === 0) {
+    curSlide = maxSlide - 1;
+  } else {
+    curSlide--;
+  }
+
+  gotoSlide(curSlide);
+};
+
+btnRight.addEventListener('click', nextSlide);
+btnLeft.addEventListener('click', prevSlide); */
+
+//todo SLIDER v2
+const slides = document.querySelectorAll('.slide');
+const btnnLeft = document.querySelector('.slider__btn--left');
+const btnRight = document.querySelector('.slider__btn--right');
+
+// Initial State
+let curSlide = 0;
+const maxSlide = slides.length;
+
+slides.forEach((slide, index) => {
+  slide.style.transform = `translate(${index * 100}%)`;
+});
+
+// gotoSlide()
+const gotoSlide = function (curSlide) {
+  slides.forEach((slide, index) => {
+    slide.style.transform = `translate(${(index - curSlide) * 100}%)`;
+  });
+};
+
+// Next Slide
+const nextSlide = () => {
+  if (curSlide === slides.length - 1) {
+    curSlide = 0;
+  } else {
+    curSlide++;
+  }
+  gotoSlide(curSlide);
+};
+
+// Prev Slide
+const prevSlide = () => {
+  if (curSlide === 0) {
+    curSlide = maxSlide - 1;
+  } else {
+    curSlide--;
+  }
+  gotoSlide(curSlide);
+};
+
+btnnLeft.addEventListener('click', prevSlide);
+btnRight.addEventListener('click', nextSlide);
