@@ -19,3 +19,4 @@ Advanced DOM and Events
 017 Revealing Elements on Scroll v2
 018 Lazy Loading Images
 019 Building a Slider Component Part 1
+020 Building a Slider Component Part 2
