@@ -16,3 +16,4 @@ Advanced DOM and Events
 016 A Better Way The Intersection Observer API
 016 A Better Way The Intersection Observer API v2
 017 Revealing Elements on Scroll
+017 Revealing Elements on Scroll v2
