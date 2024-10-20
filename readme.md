@@ -15,3 +15,4 @@ Advanced DOM and Events
 015 Implementing a Sticky Navigation The Scroll Event
 016 A Better Way The Intersection Observer API
 016 A Better Way The Intersection Observer API v2
+017 Revealing Elements on Scroll
