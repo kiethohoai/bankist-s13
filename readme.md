@@ -20,3 +20,4 @@ Advanced DOM and Events
 018 Lazy Loading Images
 019 Building a Slider Component Part 1
 020 Building a Slider Component Part 2
+021 Lifecycle DOM Events
