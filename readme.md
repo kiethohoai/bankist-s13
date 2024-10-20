@@ -21,3 +21,4 @@ Advanced DOM and Events
 019 Building a Slider Component Part 1
 020 Building a Slider Component Part 2
 021 Lifecycle DOM Events
+022 Efficient Script Loading defer and async
