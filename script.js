@@ -123,9 +123,31 @@ window.addEventListener('scroll', () => {
   //   nav.classList.remove('sticky');
   // }
 }); */
-
+/* 
 window.addEventListener('scroll', () => {
   window.scrollY > section1.getBoundingClientRect().top
     ? nav.classList.add('sticky')
     : nav.classList.remove('sticky');
+}); */
+
+//todo Sticky Navigation with Intersection Observer API
+
+const stickyNav = function (entries) {
+  // Input
+  const entry = entries[0];
+
+  // Add/Remove "sticky" class
+  if (!entry.isIntersecting) nav.classList.add('sticky');
+  else nav.classList.remove('sticky');
+};
+
+const header = document.querySelector('.header');
+const navHeight = nav.getBoundingClientRect().height;
+console.log(`🚀  navHeight =>`, navHeight);
+
+const headerObserver = new IntersectionObserver(stickyNav, {
+  root: null,
+  threshold: 0,
+  rootMargin: `-${navHeight}px`,
 });
+headerObserver.observe(header);
