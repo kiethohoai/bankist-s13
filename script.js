@@ -85,8 +85,6 @@ tabsContainer.addEventListener('click', e => {
 // todo Menu fade animation
 
 const handleHover = function (e) {
-  console.log(this, e.currentTarget);
-
   if (e.target.classList.contains('nav__link')) {
     const link = e.target;
     const siblings = link.closest('.nav').querySelectorAll('.nav__link');
@@ -106,3 +104,28 @@ nav.addEventListener('mouseover', handleHover.bind(0.5));
 nav.addEventListener('mouseout', handleHover.bind(1));
 // nav.addEventListener('mouseover', e => handleHover(e, 0.5));
 // nav.addEventListener('mouseout', e => handleHover(e, 1));
+
+//todo Sticky navigation
+/* 
+const initialCoords = section1.getBoundingClientRect();
+console.log(`🚀  initialCoords =>`, initialCoords);
+
+window.addEventListener('scroll', () => {
+  // #1
+  window.scrollY > initialCoords.top
+    ? nav.classList.add('sticky')
+    : nav.classList.remove('sticky');
+
+  // #2
+  // if (window.scrollY > initialCoords.top) {
+  //   nav.classList.add('sticky');
+  // } else {
+  //   nav.classList.remove('sticky');
+  // }
+}); */
+
+window.addEventListener('scroll', () => {
+  window.scrollY > section1.getBoundingClientRect().top
+    ? nav.classList.add('sticky')
+    : nav.classList.remove('sticky');
+});
