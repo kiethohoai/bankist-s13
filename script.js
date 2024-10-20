@@ -88,15 +88,11 @@ const handleHover = function (e) {
   if (e.target.classList.contains('nav__link')) {
     const link = e.target;
     const siblings = link.closest('.nav').querySelectorAll('.nav__link');
-    const logo = link.closest('.nav').querySelector('img');
-
     siblings.forEach(el => {
       if (el !== link) {
         el.style.opacity = this;
       }
     });
-
-    logo.style.opacity = this;
   }
 };
 
@@ -108,8 +104,6 @@ nav.addEventListener('mouseout', handleHover.bind(1));
 //todo Sticky navigation
 /* 
 const initialCoords = section1.getBoundingClientRect();
-console.log(`🚀  initialCoords =>`, initialCoords);
-
 window.addEventListener('scroll', () => {
   // #1
   window.scrollY > initialCoords.top
@@ -131,7 +125,7 @@ window.addEventListener('scroll', () => {
 }); */
 
 //todo Sticky Navigation with Intersection Observer API
-
+/* 
 const stickyNav = function (entries) {
   // Input
   const entry = entries[0];
@@ -143,7 +137,24 @@ const stickyNav = function (entries) {
 
 const header = document.querySelector('.header');
 const navHeight = nav.getBoundingClientRect().height;
-console.log(`🚀  navHeight =>`, navHeight);
+const headerObserver = new IntersectionObserver(stickyNav, {
+  root: null,
+  threshold: 0,
+  rootMargin: `-${navHeight}px`,
+});
+headerObserver.observe(header); */
+
+// INPUT
+const header = document.querySelector('.header');
+const navHeight = nav.getBoundingClientRect().height;
+
+// OUTPUT
+const stickyNav = function (entries) {
+  const entry = entries[0];
+  // Add/Remove "sticky" class
+  if (!entry.isIntersecting) nav.classList.add('sticky');
+  else nav.classList.remove('sticky');
+};
 
 const headerObserver = new IntersectionObserver(stickyNav, {
   root: null,
@@ -151,3 +162,4 @@ const headerObserver = new IntersectionObserver(stickyNav, {
   rootMargin: `-${navHeight}px`,
 });
 headerObserver.observe(header);
+
